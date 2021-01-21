@@ -293,6 +293,11 @@ def encoding_sentence(english_sentence):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
     result = []
     english_sentence = get_cleaned_english_sentence(english_sentence.strip())
+
+    # 다중 공백 처리
+    english_sentence = ' '.join(english_sentence.split())
+
+
     for word in english_sentence:
         if word !=' ':
             result.append(encoding_character(word.upper()))
